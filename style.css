@@ -1,0 +1,391 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 215, 80, 0.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 190, 60, 0.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #2b1b03,
+            #5c410f 48%,
+            #261600
+        );
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+.stars,
+.heart {
+    position: fixed;
+    left: 0;
+    bottom: -50px;
+
+    font-size: 20px;
+    opacity: 0.8;
+
+    pointer-events: none;
+    z-index: 0;
+
+    animation: rise linear forwards;
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+.star {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #fff8d6;
+
+    opacity: 0.7;
+
+    animation:
+        twinkle 2.5s
+        infinite
+        ease-in-out;
+}
+
+@keyframes twinkle {
+    50% {
+        opacity: 0.15;
+        transform: scale(0.6);
+    }
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    position: relative;
+
+    z-index: 1;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 18px;
+}
+
+.card {
+    width: min(900px, 100%);
+
+    padding: 42px 30px;
+
+    border:
+        1px solid
+        rgba(255, 235, 150, 0.22);
+
+    border-radius: 28px;
+
+    background:
+        rgba(255, 235, 150, 0.09);
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0, 0, 0, 0.35);
+
+    text-align: center;
+}
+
+
+/* =========================
+   CROWN
+========================= */
+
+.crown {
+    font-size: 45px;
+
+    animation:
+        float 3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+
+/* =========================
+   MONTHSARY LABEL
+========================= */
+
+.age {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #facc15,
+            #f59e0b
+        );
+
+    font-weight: 600;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(250, 204, 21, 0.3);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+    margin-top: 8px;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(48px, 9vw, 88px);
+
+    line-height: 1;
+
+    color: #fff1a8;
+
+    text-shadow:
+        0 0 25px
+        rgba(255, 215, 80, 0.55);
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+    margin: 16px 0 28px;
+
+    color: #f8e7b0;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   LETTER CONTAINER
+========================= */
+
+.envelope {
+    margin:
+        0 auto 22px;
+
+    width:
+        min(680px, 100%);
+
+    border-radius: 20px;
+
+    padding: 3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #facc15,
+            #fde68a,
+            #f59e0b
+        );
+}
+
+.letter {
+    text-align: left;
+
+    padding: 28px 27px;
+
+    border-radius: 18px;
+
+    background: #fffdf2;
+
+    color: #4a3508;
+
+    line-height: 1.85;
+
+    font-size: 15px;
+}
+
+.letter p {
+    margin-bottom: 14px;
+}
+
+
+/* =========================
+   LETTER PHOTOS
+========================= */
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 22px 0;
+    flex-wrap: wrap;
+}
+
+.photo-container .photo {
+    margin: 0;
+}
+
+.photo-container img {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.photo img {
+    width: 100%;
+
+    max-width: 200px;
+
+    height: auto;
+
+    display: inline-block;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   GREETING & CLOSING
+========================= */
+
+.greeting,
+.closing {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 27px;
+
+    color: #b77900;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    border: none;
+
+    cursor: pointer;
+
+    padding: 13px 25px;
+
+    border-radius: 999px;
+
+    color: #3b2900;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-weight: 600;
+
+    font-size: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #facc15,
+            #f59e0b
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(245, 158, 11, 0.35);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 14px 35px
+        rgba(245, 158, 11, 0.45);
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */* {
+    box-sizing: border-box;
+}
